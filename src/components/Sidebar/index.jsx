@@ -1,9 +1,7 @@
 import { Box, Icon, Text } from '@chakra-ui/react';
-import styles from './Sidebar.module.scss';
+// import styles from './Sidebar.module.scss';
 
-import clsx from 'clsx';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { AiFillLeftCircle } from 'react-icons/ai';
 
 const Sidebar = ({ elements }) => {
 	const navigate = useNavigate();
@@ -31,9 +29,6 @@ const Sidebar = ({ elements }) => {
 				{elements?.map((element, index) => (
 					<Box
 						key={index}
-						className={clsx(styles.row, {
-							[styles.active]: pathname.startsWith(element.link),
-						})}
 						onClick={() => onRowClick(element)}
 					>
 						<Box className={styles.element}>

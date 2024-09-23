@@ -1,20 +1,19 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import AuthLayout from "../layouts/AuthLayout";
 import MainLayout from "../layouts/MainLayout";
-import Login from "../modules/Login";
-import Dashboard from "../modules/Dashboard";
-import { useSelector } from "react-redux";
+import LoginPage from "../pages/Login";
 
 const Router = () => {
   const isAuth = useSelector((state) => state.user.isAuth);
 
-  if (!isAuth)
+  if (!isAuth || true)
     return (
       <Routes>
         <Route path="/" element={<AuthLayout />}>
           <Route index element={<Navigate to="/login " />} />
-          <Route path="login" element={<Login />} />
+          <Route path="login" element={<LoginPage />} />
           <Route path="*" element={<Navigate to="/login" />} />
         </Route>
         <Route path="*" element={<Navigate to="/login" />} />
@@ -25,7 +24,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Navigate to="/dashboard" />} />
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="dashboard" element={<Login />} />
           <Route path="*" element={<Navigate to="/dashboard" />} />
         </Route>
 
@@ -34,4 +33,4 @@ const Router = () => {
     );
 };
 
-export default observer(Router);
+export default Router;

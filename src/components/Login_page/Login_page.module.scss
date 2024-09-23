@@ -1,0 +1,103 @@
+.logindiv {
+  display: flex;
+  height: 900px;
+  background-color: #f4f9fd;
+}
+
+.gradientdiv {
+  width: 55%;
+  background: linear-gradient(0deg, #010511 0%, #071649 50%, #010511 100%);
+  div {
+    position: relative;
+    width: 440px;
+    height: 236px;
+    top: 552px;
+    left: 47px;
+    p {
+      position: absolute;
+      color: white;
+      font-size: 48px;
+      line-height: 58px;
+      font-style: italic;
+      font-weight: 300;
+    }
+  }
+}
+
+.loginForm {
+  display: flex;
+  width: 525px;
+  height: 450px;
+  margin: 200px 0px;
+  margin-left: 145px;
+  form {
+    padding-left: 64px;
+    padding-top: 7px;
+    h1 {
+      size: 36px;
+      line-height: 46px;
+      padding-bottom: 12px;
+    }
+
+    button {
+      width: 400px;
+      height: 50px;
+      background-color: #152bf3;
+      border-radius: 4px;
+      p {
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+      }
+    }
+  }
+}
+
+.input_box {
+  margin: 50px 0;
+  position: relative;
+  height: 40px;
+  width: 400px;
+  border-bottom: 2px solid black;
+  label {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 400;
+    left: 5px;
+    pointer-events: none;
+  }
+
+  input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+  }
+
+  img {
+    position: absolute;
+    height: 12px;
+    width: 17px;
+    right: 10px;
+    transform: translateY(130%);
+  }
+}
+
+.input_box input:focus ~ label,
+.input_box input:not(:placeholder-shown) ~ label,
+.input_box input:valid ~ label {
+  top: -30px;
+}
+
+.links {
+  margin-top: 53px;
+  margin-bottom: 27px;
+  display: flex;
+  gap: 113px;
+  a {
+    text-decoration: none;
+  }
+}
