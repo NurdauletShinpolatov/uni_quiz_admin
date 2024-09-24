@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import AuthLayout from "../layouts/AuthLayout";
 import MainLayout from "../layouts/MainLayout";
 import LoginPage from "../pages/Login";
+import RegisterPage from "../pages/Register";
 
 const Router = () => {
   const isAuth = useSelector((state) => state.user.isAuth);
@@ -14,6 +15,7 @@ const Router = () => {
         <Route path="/" element={<AuthLayout />}>
           <Route index element={<Navigate to="/login " />} />
           <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
           <Route path="*" element={<Navigate to="/login" />} />
         </Route>
         <Route path="*" element={<Navigate to="/login" />} />

@@ -1,12 +1,9 @@
-import styles from "./LoginPage.module.scss";
+import styles from "./Register.module.scss";
 import { EmailIcon, LockIcon } from "../../assets/icons/loginRegisterIcons";
 import { Center } from "@chakra-ui/react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function LoginPage() {
-
-  const navigate = useNavigate()
-
+export default function RegisterPage() {
   return (
     <div className={styles.loginPage}>
       <div className={styles.gradient}>
@@ -18,7 +15,7 @@ export default function LoginPage() {
       </div>
       <Center className={styles.right}>
         <form>
-          <h1 className={styles.heading}>Login</h1>
+          <h1 className={styles.heading}>Register</h1>
           <div className={styles.inputBox}>
             <input type="email" placeholder="Email" required />
             <EmailIcon />
@@ -27,10 +24,10 @@ export default function LoginPage() {
             <input type="password" placeholder="Password" required />
             <LockIcon />
           </div>
-          <button className={styles.loginBtn}>Login</button>
+          <button className={styles.loginBtn}>Register</button>
           <div className={styles.links}>
-            <Link to="/register" >Create an account</Link>
-            <Link to="#">Forgot password?</Link>
+            <Link to="/login" >Already have an account</Link>
+            <a href="#">Forgot password?</a>
           </div>
         </form>
       </Center>
