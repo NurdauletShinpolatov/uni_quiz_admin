@@ -24,6 +24,10 @@ export default function RegisterPage() {
             <input type="password" placeholder="Password" required />
             <LockIcon />
           </div>
+          <div className={styles.inputBox}>
+            <input type="password" placeholder="Confirm Password" required />
+            <LockIcon />
+          </div>
           <button className={styles.loginBtn}>Register</button>
           <div className={styles.links}>
             <Link to="/login" >Already have an account</Link>
