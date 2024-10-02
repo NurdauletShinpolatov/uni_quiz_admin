@@ -1,11 +1,11 @@
-@import '../../scss/colors.scss';
+@import "../../scss/colors.scss";
 
 .loginPage {
   display: flex;
   background-color: #f4f9fd;
   min-width: 100vw;
   min-height: 100vh;
-  
+
   .gradient {
     flex: 55;
     padding: 111px 47px;
@@ -22,21 +22,24 @@
       font-weight: 300;
     }
   }
-  .right{
+
+  .right {
     flex: 45;
     padding: 32px;
-    
-    form{
+
+    form {
       width: 100%;
       max-width: 400px;
     }
-    .heading{
+
+    .heading {
       font-size: 36px;
       font-weight: 600;
       line-height: 44px;
       margin-bottom: 48px;
     }
-    .inputBox{
+
+    .inputBox {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -46,10 +49,11 @@
       padding-right: 10px;
       gap: 10px;
 
-      &:nth-last-of-type(2){
+      &:nth-last-of-type(2) {
         margin-bottom: 47px;
       }
-      input{
+
+      input {
         flex-grow: 1;
         background: transparent;
         font-size: 20px;
@@ -57,7 +61,7 @@
         line-height: 24px;
         outline: 0;
 
-        &::placeholder{
+        &::placeholder {
           font-size: 20px;
           font-weight: 500;
           line-height: 24px;
@@ -65,7 +69,8 @@
         }
       }
     }
-    .loginBtn{
+
+    .loginBtn {
       width: 100%;
       padding: 8px 0;
       font-size: 20px;
@@ -76,12 +81,111 @@
       border-radius: 4px;
       margin-bottom: 53px;
     }
-    .links{
+
+    .links {
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-weight: 500;
       color: $light-blue;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .loginPage {
+    .gradient {
+      p {
+        font-size: 40px;
+        width: 60%;
+      }
+    }
+    .right {
+      padding: 30px;
+      form {
+        max-width: 380px;
+      }
+      .heading {
+        font-size: 32px;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .loginPage {
+    flex-direction: column;
+    .gradient {
+      flex: unset;
+      height: 300px;
+      justify-content: center;
+      text-align: center;
+
+      p {
+        width: 80%;
+        font-size: 36px;
+      }
+    }
+    .right {
+      flex: unset;
+      padding: 20px;
+      margin-top: -50px;
+      form {
+        max-width: 350px;
+        padding-top: 100px;
+      }
+      .heading {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .loginPage {
+    .gradient {
+      p {
+        font-size: 28px;
+        width: 90%;
+      }
+    }
+    .right {
+      padding: 15px;
+      form {
+        padding-top: 100px;
+        max-width: 300px;
+      }
+      .heading {
+        font-size: 24px;
+      }
+      .inputBox input {
+        font-size: 16px;
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .loginPage {
+    .gradient {
+      p {
+        font-size: 22px;
+      }
+    }
+    .right {
+      padding: 10px;
+      form {
+        padding-top: 100px;
+        max-width: 260px;
+      }
+      .heading {
+        font-size: 20px;
+      }
+      .inputBox {
+        height: 35px;
+      }
+      .inputBox input {
+        font-size: 14px;
+      }
     }
   }
 }
