@@ -82,6 +82,24 @@
       font-weight: 600;
       border-radius: 4px;
       margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px; /* To separate the text from the spinner */
+      position: relative;
+
+      .spinner {
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-top: 3px solid white;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        animation: spin 1s linear infinite;
+      }
+    }
+
+    .googleBtn {
+      margin-bottom: 20px;
     }
 
     .links {
@@ -91,11 +109,29 @@
       font-weight: 500;
       color: $light-blue;
     }
-
-    .googleBtn {
-      margin-bottom: 20px;
-    }
   }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.successMessage {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1001;
+  font-size: 18px;
 }
 
 @media (max-width: 1200px) {
@@ -169,6 +205,7 @@
     }
   }
 }
+
 @media (max-width: 576px) {
   .loginPage {
     .gradient {

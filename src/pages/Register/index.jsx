@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import styles from "./Register.module.scss";
 import { EmailIcon, LockIcon } from "../../assets/icons/loginRegisterIcons";
@@ -17,21 +17,32 @@ export default function RegisterPage() {
     reValidateMode: "onChange",
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(false);
   const password = watch("password");
 
-  // Callback when Google signup is successful
   const handleGoogleSuccess = (response) => {
     console.log("Google sign-in successful:", response);
-    //You can handle Google signin (send token to backend)
   };
 
-  //Callback when Google sign-up fails
   const handleGoogleFailure = (error) => {
     console.error("Google sign-in failed:", error);
+  };
+
+  const onSubmit = async (data) => {
+    setIsLoading(true);
+    try {
+      console.log(data);
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      setSuccessMessage(true);
+      setTimeout(() => {
+        setSuccessMessage(false);
+      }, 1000);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -106,8 +117,13 @@ export default function RegisterPage() {
             <p className={styles.error}>{errors.confirmPassword.message}</p>
           )}
 
-          <button type="submit" className={styles.loginBtn} disabled={!isValid}>
-            Register
+          <button
+            type="submit"
+            className={styles.loginBtn}
+            disabled={!isValid || isLoading}
+          >
+            {isLoading && <span className={styles.spinner}></span>}
+            {isLoading ? " Registering..." : "Register"}
           </button>
 
           <GoogleLogin
@@ -116,7 +132,7 @@ export default function RegisterPage() {
             onSuccess={handleGoogleSuccess}
             onFailure={handleGoogleFailure}
             cookiePolicy={"single_host_origin"}
-            className={styles.googleBtn} 
+            className={styles.googleBtn}
           />
 
           <div className={styles.links}>
@@ -125,6 +141,10 @@ export default function RegisterPage() {
           </div>
         </form>
       </Center>
+
+      {successMessage && (
+        <div className={styles.successMessage}>Successfully registered ✅</div>
+      )}
     </div>
   );
 }
