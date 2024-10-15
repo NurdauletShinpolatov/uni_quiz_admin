@@ -1,11 +1,9 @@
 import styles from "./LoginPage.module.scss";
 import { EmailIcon, LockIcon } from "../../assets/icons/loginRegisterIcons";
 import { Center } from "@chakra-ui/react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function LoginPage() {
-
-  const navigate = useNavigate()
 
   return (
     <div className={styles.loginPage}>
@@ -29,7 +27,7 @@ export default function LoginPage() {
           </div>
           <button className={styles.loginBtn}>Login</button>
           <div className={styles.links}>
-            <Link to="/register" >Create an account</Link>
+            <Link to="/register">Create an account</Link>
             <Link to="#">Forgot password?</Link>
           </div>
         </form>

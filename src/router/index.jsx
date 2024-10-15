@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 
 import AuthLayout from "../layouts/AuthLayout";
 import MainLayout from "../layouts/MainLayout";
-import LoginPage from "../pages/Login";
-import RegisterPage from "../pages/Register";
+import LoginPage from "../pages/LoginPage";
+import RegisterPage from "../pages/RegisterPage";
 
 const Router = () => {
   const isAuth = useSelector((state) => state.user.isAuth);
